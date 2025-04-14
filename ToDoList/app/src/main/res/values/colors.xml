@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="original_nordic">#29446f</color>
+    <color name="saturated_nordic">#204278</color>
+    <color name="darker_nordic">#263853</color>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nordic_blue">#2E3A59</color>
+    <color name="light_nordic_blue">#4C5C77</color>
+    <color name="lapis_lazuli">#1f4788</color>
+    <color name="desire">#ea3c53</color>
+</resources>

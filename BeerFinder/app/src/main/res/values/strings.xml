@@ -1,0 +1,25 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Beer Finder</string>
+
+    <!-- Text View Texts -->
+    <string name="beer_selected_text">No beers selected</string>"
+
+    <!-- Button Texts -->
+    <string name="find_beer_button_text">Find Beer!</string>
+
+    <!-- Beer Options -->
+    <string-array name="beer_options">
+        <item>Bud Light</item>
+        <item>Budweiser</item>
+        <item>Coors Light</item>
+        <item>Corona</item>
+        <item>Corona Light</item>
+        <item>Guinness Draught</item>
+        <item>Heineken</item>
+        <item>Miller Lite</item>
+        <item>Modelo Especial</item>
+        <item>Samuel Adams</item>
+        <item>Stella Artois</item>
+    </string-array>
+</resources>

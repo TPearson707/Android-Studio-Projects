@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Coffee Order</string>
+
+    <!-- strings for image view -->
+    <string name="coffee_bean_description">Coffee Bean</string>
+
+    <!-- strings for text view -->
+    <string name="choose_toppings">Choose Toppings</string>
+    <string name="quantity">Quantity</string>"
+    <string name="number_of_drinks">0</string>
+    <string name="order_summary">ORDER SUMMARY</string>
+    <string name="summary">Add whipped cream? no\nAdd chocolate? no\nQuantity: 0\n\nPrice: $0.00</string>
+
+    <!-- strings for checkboxes -->
+    <string name="cream">Cream</string>
+    <string name="chocolate">Chocolate</string>
+
+    <!-- strings for button -->
+    <string name="order">Order</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+
+</resources>

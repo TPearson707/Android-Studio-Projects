@@ -1,0 +1,14 @@
+<resources>
+    <!-- Application Name -->
+    <string name="app_name">Multiply Calculator</string>
+
+    <!-- UI Hints and Labels -->
+    <string name="hint">Enter a number</string>
+
+    <!-- Default Values -->
+    <string name="result">0</string>
+
+    <!-- Button Labels -->
+    <string name="multiply">Multiply</string>
+    <string name="clear">Clear</string>
+</resources>
