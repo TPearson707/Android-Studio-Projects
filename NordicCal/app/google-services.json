@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1096316916023",
+    "project_id": "nordic-cal",
+    "storage_bucket": "nordic-cal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096316916023:android:064c71b6c6992ce44d8ab2",
+        "android_client_info": {
+          "package_name": "com.example.nordiccal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaExOxHxjCERLwI2_GlNxlPg4wSpr0pLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

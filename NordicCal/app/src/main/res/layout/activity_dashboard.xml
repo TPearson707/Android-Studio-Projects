@@ -1,0 +1,239 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue">
+
+    <!-- TextView for "My Nutrition" title -->
+    <TextView
+        android:id="@+id/myNutritionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@drawable/bar"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:text="@string/dashboard_title"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- LinearLayout for Macros and Macros Cards -->
+
+    <LinearLayout
+        android:id="@+id/mealsContainer"
+        android:layout_width="375dp"
+        android:layout_height="275dp"
+        android:background="@drawable/linear_background"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myNutritionTextView"
+        app:layout_constraintVertical_bias="0.024">
+
+        <!-- "Meals Logged" Title at the top-left -->
+        <TextView
+            android:id="@+id/mealsLoggedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:gravity="start"
+            android:text="@string/meals_logged_title"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"/>
+
+        <!-- ScrollView for the meal items -->
+        <android.widget.ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Sub LinearLayout for meal items -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Breakfast Item -->
+                <LinearLayout
+                    android:id="@+id/breakfast"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/logged_meal_background"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+                <!-- Lunch Item -->
+                <LinearLayout
+                    android:id="@+id/lunch"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/logged_meal_background"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+                <!-- Dinner Item -->
+                <LinearLayout
+                    android:id="@+id/dinner"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/logged_meal_background"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+                <!-- Snacks Item -->
+                <LinearLayout
+                    android:id="@+id/snacks"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/logged_meal_background"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/snacks2"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/logged_meal_background"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+            </LinearLayout> <!-- End of Sub LinearLayout for meals -->
+
+        </android.widget.ScrollView> <!-- End of ScrollView -->
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="375dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/linear_background"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealsContainer"
+        app:layout_constraintVertical_bias="0.06">
+
+        <!-- "Macros" Title at the top-left -->
+        <TextView
+            android:id="@+id/macrosTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:gravity="start"
+            android:text="@string/macros_title"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <!-- Container for Macros (Protein, Carbs, Fats, Fiber) cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <!-- Protein Macro -->
+            <TextView
+                android:id="@+id/proteinMacro"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_blue"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/protein_macro"
+                android:textColor="@color/navy_blue"
+                android:textSize="16sp" />
+
+            <!-- Carbs Macro -->
+            <TextView
+                android:id="@+id/carbsMacro"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_cream"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/carbs_macro"
+                android:textColor="@color/olive_brown"
+                android:textSize="16sp" />
+
+            <!-- Fats Macro -->
+            <TextView
+                android:id="@+id/fatsMacro"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_pink"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/fats_macro"
+                android:textColor="@color/dusty_rose"
+                android:textSize="16sp" />
+
+            <!-- Fiber Macro -->
+            <TextView
+                android:id="@+id/fiberMacro"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_green"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/fiber_macro"
+                android:textColor="@color/sage_green"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_out_button"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/testLogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Test Log Meal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

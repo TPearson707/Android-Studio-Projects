@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Nordic Cal</string>
+
+    <!-- Text Views -->
+    <string name="welcome_back_string">Welcome Back</string>
+    <string name="forgot_password_clickable">Forgot Password?</string>"
+    <string name="sign_up_clickable">Sign Up</string>
+    <string name="dashboard_title">My Nutrition</string>
+
+    <!-- Meals Logged -->
+    <string name="meals_logged_title">Meals Logged</string>
+
+    <!-- Macros -->
+    <string name="macros_title">Macros</string>
+    <string name="protein_macro">Protein\n0g</string>
+    <string name="carbs_macro">Carbs\n0g</string>
+    <string name="fats_macro">Fats\n0g</string>
+    <string name="fiber_macro">Fiber\n0g</string>
+
+    <!-- EditText -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+
+
+    <!-- Buttons -->
+    <string name="log_in_button">Log In</string>
+    <string name="log_out_button">Log Out</string>
+
+    <!-- Content Descriptions -->
+    <string name="content_description_logo">Nordic Cal Logo</string>"
+</resources>

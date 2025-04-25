@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/verificationDialogLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/rounded_dialog_background"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/verificationDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Email"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        android:paddingBottom="12dp" />
+
+    <TextView
+        android:id="@+id/verificationDialogMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="We've sent a verification email to your inbox. Please check your email and click the link to activate your account."
+        android:textColor="@color/navy_blue"
+        android:paddingBottom="20dp" />
+
+    <Button
+        android:id="@+id/openEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Email App"
+        android:background="@drawable/log_in_button"
+        android:elevation="2dp"
+        android:fontFamily="@font/inter_light"
+        android:textColor="@color/white"
+
+        app:backgroundTint="@null" />
+
+    <Button
+        android:id="@+id/resendEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend Email"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/log_in_button"
+        android:elevation="2dp"
+        android:fontFamily="@font/inter_light"
+        android:textColor="@color/white"
+        app:backgroundTint="@null" />
+
+
+</LinearLayout>
