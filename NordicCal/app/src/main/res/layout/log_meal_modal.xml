@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/logMealModal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/log_meal_modal_background"
+    android:padding="24dp"
+    android:elevation="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_margin="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/logMealTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Meal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Meal Search -->
+    <AutoCompleteTextView
+        android:id="@+id/foodSearchInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:hint="Food Search"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+
+    <!-- Macronutrient Summary: kcal | g | g | g -->
+    <LinearLayout
+        android:id="@+id/nutrientSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/caloriesText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 kcal"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/proteinText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 g"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/carbsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 g"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/fatText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 g"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/fiberText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 g"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:id="@+id/buttonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+    </LinearLayout>
+</LinearLayout>

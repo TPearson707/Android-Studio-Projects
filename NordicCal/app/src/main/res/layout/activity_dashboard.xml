@@ -24,8 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!-- LinearLayout for Macros and Macros Cards -->
-
     <LinearLayout
         android:id="@+id/mealsContainer"
         android:layout_width="375dp"
@@ -44,76 +42,26 @@
             android:id="@+id/mealsLoggedTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/inter"
             android:gravity="start"
             android:text="@string/meals_logged_title"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginBottom="5dp"/>
+            android:textSize="18sp" />
 
         <!-- ScrollView for the meal items -->
-        <android.widget.ScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Sub LinearLayout for meal items -->
             <LinearLayout
+                android:id="@+id/mealItemsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical" />
 
-                <!-- Breakfast Item -->
-                <LinearLayout
-                    android:id="@+id/breakfast"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/logged_meal_background"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
-                </LinearLayout>
+        </ScrollView>
 
-                <!-- Lunch Item -->
-                <LinearLayout
-                    android:id="@+id/lunch"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/logged_meal_background"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
-                </LinearLayout>
-
-                <!-- Dinner Item -->
-                <LinearLayout
-                    android:id="@+id/dinner"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/logged_meal_background"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
-                </LinearLayout>
-
-                <!-- Snacks Item -->
-                <LinearLayout
-                    android:id="@+id/snacks"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/logged_meal_background"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/snacks2"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/logged_meal_background"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
-                </LinearLayout>
-
-            </LinearLayout> <!-- End of Sub LinearLayout for meals -->
-
-        </android.widget.ScrollView> <!-- End of ScrollView -->
 
     </LinearLayout>
 
@@ -219,21 +167,67 @@
         android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:text="@string/log_out_button"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/myNutritionTextView"
+        app:layout_constraintEnd_toEndOf="@+id/myNutritionTextView"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/testLogButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="9dp"
+        android:onClick="onClickOpenLogMeal"
         android:text="Test Log Meal"
+        app:layout_constraintBottom_toBottomOf="@+id/myNutritionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/microNutrientsContainer"
+        android:layout_width="375dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/linear_background"
+        android:orientation="vertical"
+        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="Micro Nutrients"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <!-- Scrollable container -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/microCardContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+        </ScrollView>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -7,6 +9,14 @@ android {
     namespace = "com.example.nordiccal"
     compileSdk = 35
 
+    val localProperties = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localProperties.load(localPropertiesFile.inputStream())
+    }
+
+    val myApiKey: String = localProperties.getProperty("FDC_API_KEY") ?: ""
+
     defaultConfig {
         applicationId = "com.example.nordiccal"
         minSdk = 24
@@ -15,6 +25,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Inject key
+        buildConfigField("String", "FDC_API_KEY", "\"$myApiKey\"")
     }
 
     buildTypes {
@@ -26,6 +39,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -37,7 +55,6 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-database")
 
-    // OkHttp for FoodData Central API requests
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     implementation(libs.appcompat)

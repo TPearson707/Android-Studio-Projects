@@ -2,6 +2,7 @@ package com.example.nordiccal;
 
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,11 +26,11 @@ public class MealLogger {
      *
      * @param meal The LoggedMeal object containing nutritional info and timestamp.
      */
-    public static void logMealToFirebase(LoggedMeal meal) {
+    public static void logMealToFirebase(LoggedMeal meal, @Nullable Runnable onSuccess) {
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
 
-        // Format date as yyyy-MM-dd for use as subpath
+        // Format date as yyyy-MM-dd for use as sub-path
         String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 .format(new Date(meal.loggedAt));
 
@@ -42,10 +43,14 @@ public class MealLogger {
 
         mealRef.setValue(meal).addOnSuccessListener(aVoid -> {
             Log.d("MealLogger", "Meal logged successfully on " + date);
+            if (onSuccess != null) {
+                onSuccess.run();
+            }
         }).addOnFailureListener(e -> {
             Log.e("MealLogger", "Failed to log meal", e);
         });
     }
+
 
     /**
      * Callback interface for retrieving all meals for a specific date.

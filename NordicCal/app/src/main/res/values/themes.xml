@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.NordicCal" parent="Base.Theme.NordicCal" />
+
+    <style name="Theme.NordicCal.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item> <!-- We'll make this drawable next -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

@@ -2,6 +2,7 @@ package com.example.nordiccal;
 
 import android.util.Log;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
@@ -25,7 +26,7 @@ import okhttp3.Response;
 public class FoodDataFetcher {
     private static final String TAG = "FoodDataFetcher";
     private static final OkHttpClient client = new OkHttpClient();
-    private static final String API_KEY = "FHuSHbx0ff2OWyhgCkkVle9jqDHcgVI0BSaBSMQk";
+    private static final String API_KEY = BuildConfig.FDC_API_KEY;
     private static final String BASE_URL = "https://api.nal.usda.gov/fdc/v1/foods/search?dataType=Foundation,SR%20Legacy&query=";
 
     /**
@@ -36,7 +37,7 @@ public class FoodDataFetcher {
      *
      * @param foodName the name of the food to check and log (e.g., "banana")
      */
-    public static void checkAndLogFoodItem(String foodName) {
+    public static void checkAndLogFoodItem(String foodName, @Nullable Runnable onComplete) {
         String normalized = foodName.trim().toLowerCase();
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
         String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
@@ -46,13 +47,14 @@ public class FoodDataFetcher {
                 // Already in global DB — log to user meals
                 FoodItem item = snapshot.getValue(FoodItem.class);
                 long timestamp = System.currentTimeMillis();
-                assert item != null;
-                LoggedMeal meal = new LoggedMeal(item.name, 1, timestamp,
-                        item.calories, item.protein, item.carbs, item.fat, item.fiber,
-                        item.sodium, item.potassium, item.calcium, item.iron, item.magnesium,
-                        item.vitaminC, item.vitaminA, item.vitaminD, item.zinc,
-                        item.cholesterol, item.totalSugars, item.addedSugars);
-                MealLogger.logMealToFirebase(meal);
+                if (item != null) {
+                    LoggedMeal meal = new LoggedMeal(item.name, 1, timestamp,
+                            item.calories, item.protein, item.carbs, item.fat, item.fiber,
+                            item.sodium, item.potassium, item.calcium, item.iron, item.magnesium,
+                            item.vitaminC, item.vitaminA, item.vitaminD, item.zinc,
+                            item.cholesterol, item.totalSugars, item.addedSugars);
+                    MealLogger.logMealToFirebase(meal, onComplete);
+                }
             } else {
                 // Not in DB — fetch from FoodData Central
                 fetchFromFoodDataCentral(normalized, (item) -> {
@@ -63,11 +65,12 @@ public class FoodDataFetcher {
                             item.sodium, item.potassium, item.calcium, item.iron, item.magnesium,
                             item.vitaminC, item.vitaminA, item.vitaminD, item.zinc,
                             item.cholesterol, item.totalSugars, item.addedSugars);
-                    MealLogger.logMealToFirebase(meal);
+                    MealLogger.logMealToFirebase(meal, onComplete);
                 });
             }
         });
     }
+
 
     /**
      * Callback interface for returning a parsed FoodItem object.
