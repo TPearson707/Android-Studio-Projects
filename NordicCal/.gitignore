@@ -1,15 +1,39 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle files
+.gradle/
+build/
+*/build/
+!gradle-wrapper.jar
+
+# Local configuration
 local.properties
+
+# IDE and OS-specific
+.idea/
+*.iml
+.DS_Store
+*.swp
+*.swo
+
+# Generated files
+*.apk
+*.ap_
+captures/
+output.json
+
+# Logs
+*.log
+
+# Keystore files (if applicable)
+*.jks
+*.keystore
+
+# Firebase / Crashlytics
+crashlytics.properties
+firebase/
+
+# Misc
+*.class
+*.jar
+*.war
+*.ear
+
