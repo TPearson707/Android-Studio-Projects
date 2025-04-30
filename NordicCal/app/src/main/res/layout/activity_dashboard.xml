@@ -194,8 +194,8 @@
     <LinearLayout
         android:id="@+id/microNutrientsContainer"
         android:layout_width="375dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="22dp"
         android:background="@drawable/linear_background"
         android:orientation="vertical"
         android:padding="4dp"
